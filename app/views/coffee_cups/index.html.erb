@@ -1,0 +1,5 @@
+<h1>CoffeeCups#index</h1>
+
+<% @ccs.each do |cc| %>
+<p><%= link_to cc.human.name, coffee_cup_path(cc) %>'s coffee cup!</p>
+<% end %>

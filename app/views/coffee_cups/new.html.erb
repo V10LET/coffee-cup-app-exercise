@@ -1,0 +1,19 @@
+<h1>make yo self some quaphee!</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |m| %>
+    <h3 style="color: red"><%= m %></h3>
+  <% end %>
+<% end %>
+
+
+<%= form_with model: @cc do |f| %>
+
+<%= f.label 'Who is drinking coffee?' %>
+<p><%= f.collection_select :human_id, @humans, :id, :name %></p>
+
+<%= f.label 'How many ounces of coffee do they drink?' %>
+<p><%= f.number_field :size %></p>
+
+<%= f.submit %>
+<% end %>
